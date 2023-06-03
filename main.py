@@ -8,7 +8,9 @@ def picture_to_text(picture_path):
 
     text = pytesseract.image_to_string(image)
 
-    print(text)
+    return text
     
-    
-picture_to_text("/path/to/picture.png")
+picture_path = input('please insert picture path : ')
+text = picture_to_text(picture_path)
+
+print(text)
