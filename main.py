@@ -1,9 +1,13 @@
 from PIL import Image
 import pytesseract
 from os import path
+import sys
 
-def picture_to_text(picture_path):
+
+
+def picture_to_text():
     try:
+        picture_path = sys.argv[1]
         if not (path.isfile(picture_path)):
             raise ValueError('file not found !!!') 
         image = Image.open(picture_path)
@@ -14,7 +18,6 @@ def picture_to_text(picture_path):
     except ValueError as exp:
         print("Error", exp) 
     
-picture_path = input('please insert picture path : ')
-text = picture_to_text(picture_path)
+text = picture_to_text()
 
 print(text)
