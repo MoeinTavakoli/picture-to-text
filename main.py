@@ -7,6 +7,9 @@ import sys
 
 def picture_to_text():
     try:
+        if len(sys.argv) != 2:
+            raise ValueError('There isn\'t and picture pass as argument !') 
+        
         picture_path = sys.argv[1]
         if not (path.isfile(picture_path)):
             raise ValueError('file not found !!!') 
